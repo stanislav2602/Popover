@@ -1,6 +1,8 @@
 import "../css/style.css";
 
 document.addEventListener('DOMContentLoaded', () => {
+    const POPOVER_OFFSET = 10;
+    
     const btn = document.querySelector('.btn');
     const popover = document.createElement('div');
     popover.classList.add('popover');
@@ -32,10 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const popoverHeight = popover.offsetHeight;
         const popoverWidth = popover.offsetWidth;
-
-        const offset = 10;
         
-        const top = btnRect.top + window.scrollY - popoverHeight - offset;
+        const top = btnRect.top + window.scrollY - popoverHeight - POPOVER_OFFSET;
         const left = btnRect.left + window.scrollX + btnRect.width / 2 - popoverWidth / 2;
 
         popover.style.top = `${top}px`;
