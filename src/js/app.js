@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const popoverWidth = popover.offsetWidth;
 
         const offset = 10;
-
+        
         const top = btnRect.top + window.scrollY - popoverHeight - offset;
         const left = btnRect.left + window.scrollX + btnRect.width / 2 - popoverWidth / 2;
 
@@ -62,23 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     document.addEventListener('click', (e) => {
-        const isClickOnBtn = e.target === btn;
-        const isClickInPopover = popover.contains(e.target);
-
-        if (isOpen && !isClickOnBtn && !isClickInPopover) {
+        if (isOpen && e.target !== btn && !popover.contains(e.target)) {
             close();
-        }
-    });
-
-    window.addEventListener('scroll', () => {
-        if (isOpen) {
-            open();
-        }
-    });
-
-    window.addEventListener('resize', () => {
-        if (isOpen) {
-            open();
         }
     });
 });
