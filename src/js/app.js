@@ -9,11 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const popoverHeader = document.createElement('div');
     popoverHeader.classList.add('popover-header');
-    popoverHeader.textContent = 'Popover title';
+    popoverHeader.textContent = btn.dataset.title;
 
     const popoverBody = document.createElement('div');
     popoverBody.classList.add('popover-body');
-    popoverBody.textContent = "And here's some amazing content. It's very engaging. Right?";
+    popoverBody.textContent = btn.dataset.content;
 
     const popoverArrow = document.createElement('div');
     popoverArrow.classList.add('popover-arrow');
